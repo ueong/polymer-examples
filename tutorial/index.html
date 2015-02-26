@@ -12,6 +12,9 @@
   </script>
 
   <link rel="import" href="/components/font-roboto/roboto.html">
+  <link rel="import" href="/components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="/components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="/components/paper-tabs/paper-tabs.html">
 
   <style>
   html,body {
@@ -32,12 +35,52 @@
       width: 400px;
     }
   }
+
+  /* step-1 */
+  core-header-panel {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  core-toolbar {
+    background: #03a9f4;
+    color: white;
+  }
+  #tabs {
+    width: 100%;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-transform: uppercase;
+  }
+
   </style>
 
 </head>
 
 <body unresolved>
+  <core-header-panel>
+    <core-toolbar>
+      <paper-tabs id="tabs" selected="all" self-end>
+        <paper-tab name="all">All</paper-tab>
+        <paper-tab name="favorites">Favorites</paper-tab>
+      </paper-tabs>
+    </core-toolbar>
 
+    <!-- main page content will go here -->
+
+  </core-header-panel>
+
+  <script>
+    var tabs = document.querySelector('paper-tabs');
+
+    // paper-tabs extends 'core-selector'. so 'core-select' event is fired when we select a tab.
+    tabs.addEventListener('core-select', function() {
+      console.log("Selected: " + tabs.selected);
+    });
+  </script>
 </body>
 
 </html>
