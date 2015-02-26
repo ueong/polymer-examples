@@ -79,10 +79,12 @@
 
   <script>
     var tabs = document.querySelector('paper-tabs');
+    var list = document.querySelector('post-list');
 
     // paper-tabs extends 'core-selector'. so 'core-select' event is fired when we select a tab.
     tabs.addEventListener('core-select', function() {
       console.log("Selected: " + tabs.selected);
+      list.show = tabs.selected;
     });
   </script>
 </body>
