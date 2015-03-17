@@ -1,0 +1,21 @@
+{
+  "name": "polymer_in_10_minutes",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ueong/polymer-examples",
+  "authors": [
+    "Wooyoung Jung <dnfod@me.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.5"
+  }
+}
